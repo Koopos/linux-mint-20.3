@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+    mysql:
+        ports:
+            - '3306:3306'
+        volumes:
+            - '/mnt/sde/mysql:/var/lib/mysql'
+        environment:
+            - MYSQL_ROOT_PASSWORD=123456
+        container_name: mysql
+        image: mysql
+
+    nextcloud:
+        restart: always
+        ports:
+            - '8000:80'
+        volumes:
+            - '/mnt/sde/nextcloud:/var/www/html'
+        container_name: nextcloud
+        image: nextcloud
