@@ -6,7 +6,7 @@ services:
         volumes:
             - '/mnt/sde/mysql:/var/lib/mysql'
         environment:
-            - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_ROOT_PASSWORD=123456https://github.com/Koopos/linux-mint-20.3/blob/main/docker.yml
         container_name: mysql
         image: mysql
 
@@ -18,3 +18,13 @@ services:
             - '/mnt/sde/nextcloud:/var/www/html'
         container_name: nextcloud
         image: nextcloud
+     portainer-ce:
+        container_name: portainer
+        ports:
+            - '9000:9000'
+        volumes:
+            - '/var/run/docker.sock:/var/run/docker.sock'
+            - '/app/portainer_data:/data'
+        restart: always
+        privileged: true
+        image: 'portainer/portainer-ce:latest'
