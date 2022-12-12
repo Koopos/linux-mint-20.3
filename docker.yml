@@ -6,7 +6,7 @@ services:
         volumes:
             - '/mnt/sde/mysql:/var/lib/mysql'
         environment:
-            - MYSQL_ROOT_PASSWORD=123456https://github.com/Koopos/linux-mint-20.3/blob/main/docker.yml
+            - MYSQL_ROOT_PASSWORD=123456
         container_name: mysql
         image: mysql
 
